@@ -1,0 +1,6 @@
+.disabled-item{
+    background-color: rgba(215,215,215,0.75);
+}
+.tr-refresh:not(.disabled-item) > .move {
+    cursor: move;
+}

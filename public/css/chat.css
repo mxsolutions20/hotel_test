@@ -1,0 +1,165 @@
+.chat__body {
+    background: white;
+    font-family: "Helvetica Neue", Helvetica/*, sans-serif*/;
+    margin: 0;
+    padding: 0;
+}
+.chat-content {
+    border: 1px solid #f2f2f2;
+    background-color: #E4EFEF;
+    max-height: 100px;
+    overflow-y: scroll;
+    margin: 0;
+    padding:5px;
+}
+
+.chat-content::-webkit-scrollbar {
+    width: 0.7em;
+}
+
+.chat-content::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+ 
+.chat-content::-webkit-scrollbar-thumb {
+  background-color: rgba(136, 143, 143, 0.5);
+  border-radius: 1rem;
+  outline: 1px solid slategrey;
+}
+
+.messages{
+    width: 100%;
+    margin: 0 auto;
+    max-height: 70vh;
+    overflow-y: scroll;
+}
+
+.messages::-webkit-scrollbar {
+    width: 0.7em;
+}
+
+.messages::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+ 
+.messages::-webkit-scrollbar-thumb {
+  background-color: rgba(0,153,153, 0.5);
+  border-radius: 1rem;
+  outline: 1px solid slategrey;
+}
+
+.msg{
+    width:100%;
+    height:auto;
+    display:block;
+    overflow:hidden;
+}
+
+.msg .bubble{
+        float:left;
+        min-width: 55%;
+        max-width: 75%;
+        width: auto;
+        height: auto;
+        display: block;
+        background: #E0F2F1;
+        border-radius: 5px;
+        position: relative;
+        margin: 10px 0 3px 25px;
+        box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2);
+    }
+
+.msg .bubble.alt{
+            margin: 10px 25px 3px 0px;
+            background:#efefef;
+            float:right;
+}
+
+.msg .bubble.follow{
+            margin: 2px 0 3px 25px;
+        }
+
+.msg .bubble.altfollow{
+            margin: 2px 25px 3px 0px;
+            background:#effdde;
+            float:right;
+        }
+
+.msg .bubble .txt{
+            padding: 8px 0 8px 0;
+            width: 100%;
+        }
+
+.msg .bubble .txt .name{
+    font-weight: 600;
+    font-size: 12px;
+    display: inline-table;
+    padding: 0 0 0 15px;
+    margin: 0 0 4px 0;
+    color: #3498db;
+}
+
+.msg .bubble .txt .name span{
+    font-weight: normal;
+    color: #b3b3b3;
+    overflow: hidden;
+}
+
+.msg .bubble .txt .name.alt{
+    color: #43A047;
+}
+
+.msg .bubble .txt .message{
+    font-size: 12px;
+    font-weight:500;
+    padding: 0 15px 0 15px;
+    color: #525252;
+    display: table;
+}
+
+.msg .bubble .txt .message .read {
+        color: #ABABAB;
+        font-size: 1.2em;
+        position: absolute;
+        right: 15px;
+    }
+
+.msg .bubble .txt .timestamp{
+    font-size: 10px;
+    margin: auto;
+    padding: 0 15px 0 0;
+    display: table;
+    float: right;
+    position: relative;
+    text-transform: capitalize;
+    color: #999
+}
+
+.msg .bubble .bubble-arrow {
+    position: absolute;
+    float:left;
+    left: -11px;
+    top: 0px;
+}
+
+.msg .bubble .bubble-arrow.alt{
+    bottom: 20px;
+    left: auto;
+    right: 4px;
+    float:right;
+}
+
+.msg .bubble .bubble-arrow:after {
+    content: "";
+    position: absolute;
+    border-top: 15px solid #E0F2F1;
+    border-left: 15px solid transparent;
+    border-radius: 4px 0 0 0px;
+    width: 0;
+    height: 0;
+}
+
+.msg .bubble .bubble-arrow.alt:after {
+    border-top: 15px solid #efefef;
+    transform: scaleX(-1);
+}
