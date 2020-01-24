@@ -22,17 +22,6 @@ Route::group(['middleware' => 'auth'], function() {
         */
         Route::get('/',         ['as' => 'index', 'uses' => 'HomeController@index']);
         Route::get('users',     ['as' => 'users', 'uses' => 'UsersController@index']);
-
-        /*
-        |------------------------------------------------------------------------------------------------------------------
-        | = = = > H O T E L S   M O D U L E
-        |------------------------------------------------------------------------------------------------------------------
-        */
-        Route::get('hotels',          ['as' => 'hotels',     'uses' => 'HotelsController@index']);
-        Route::post('requests/create',  'HotelsController@filter_requests');
-        Route::post('request/update',   'HotelsController@get_butlers');
-        Route::post('request/delete',   'HotelsController@get_chat');
-
     });
 });
 

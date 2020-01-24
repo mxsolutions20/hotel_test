@@ -1,11 +1,6 @@
 @extends('master.master')
+@section('title', 'Users')
 
-@section('title', 'Home')
-
-
-@section('include')
-    {{-- trans('menu.perfil') --}}
-@endsection
 
 @section('css')
     <link rel="stylesheet" href="{{ asset('public/css/bootstrap-formhelpers.min.css') }}" />
@@ -14,11 +9,9 @@
 @endsection
 
 @section('scripts')
-    <script src="{{asset('public/js/bootstrap-waitingfor.js')}}"></script>
     <script src="{{asset('public/js/bootstrap-formhelpers.min.js')}}"></script>
     <script src="{{asset('public/js/bootstrap-validator.min.js') }}"></script>
     <script src="{{asset('public/js/alertify.min.js')}}"></script>
-    <script src="{{asset('public/js/site/usuarios/users.js')}}"></script>
 @endsection
 
 @section('content')
