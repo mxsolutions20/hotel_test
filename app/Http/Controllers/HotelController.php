@@ -67,8 +67,6 @@ class HotelController extends Controller
      */
     public function show($id)
     {
-        $column = "idHotel";
-        $hotel = Hotel::where($column, '=', $id)->first();
     }
 
     /**
@@ -79,7 +77,17 @@ class HotelController extends Controller
      */
     public function edit($id)
     {
-        //
+        try {
+            $column = "idHotel";
+            $hotel = Hotel::where($column, '=', $id)->first();
+        } catch (\Exception $e) {
+            echo $e->getMessage();
+            die();
+        }
+        
+        $data = ['success' => true, 'data' => $hotel];
+        $response = response($data);
+        return $response;
     }
 
     /**
