@@ -13,5 +13,6 @@ return [
 */
 
     'success_save' => 'Guardado con éxito.',
-    'success_delete' => 'Eliminado con éxito.'
+    'success_delete' => 'Eliminado con éxito.',
+    'success_update' => 'Actualizado con éxito.'
 ];

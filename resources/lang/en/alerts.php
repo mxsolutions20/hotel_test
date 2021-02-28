@@ -13,6 +13,7 @@ return [
 */
 
     'success_save' => 'Saved successfully.',
-    'success_delete' => 'Deleted successfully.'
+    'success_delete' => 'Deleted successfully.',
+    'success_update' => 'Updated successfully.'
 
 ];

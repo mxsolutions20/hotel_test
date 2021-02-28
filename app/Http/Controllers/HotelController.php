@@ -52,7 +52,7 @@ class HotelController extends Controller
         }
         //dd($request);
         $data = [
-            'success' => true, 'messages' => array(Lang::get('alerts.success_save')), 'data' => $hotel,  'htmTxtDelete' => Lang::get('forms.delete'),  'htmTxtActive' => Lang::get('forms.active')
+            'success' => true, 'messages' => array(Lang::get('alerts.success_save')), 'data' => $hotel, 'htmTxtDelete' => Lang::get('forms.delete'), 'htmTxtEdit' => Lang::get('forms.edit'),  'htmTxtActive' => Lang::get('forms.active')
         ];
         //$response = response()->json( $data, 200);
         $response = response($data);
@@ -84,7 +84,7 @@ class HotelController extends Controller
             echo $e->getMessage();
             die();
         }
-        
+
         $data = ['success' => true, 'data' => $hotel];
         $response = response($data);
         return $response;
@@ -121,6 +121,25 @@ class HotelController extends Controller
         }
         //dd($request);
         $data = ['success' => true, 'messages' => array(Lang::get('alerts.success_delete'))];
+        $response = response($data);
+        return $response;
+    }
+
+    public function hotelUpdate(Request $request)
+    {
+
+        try {
+            $column = "idHotel";
+            $hotel = Hotel::where($column, '=', $request->idElement)->first();
+            $hotel->nombre = $request->name;
+            $hotel->direccion = $request->street;
+            $hotel->telefono = $request->phone;
+            $hotel->save();
+        } catch (\Exception $e) {
+            echo $e->getMessage();
+            die();
+        }
+        $data = ['success' => true, 'messages' => array(Lang::get('alerts.success_update')), 'data' => $hotel, 'htmTxtDelete' => Lang::get('forms.delete'), 'htmTxtEdit' => Lang::get('forms.edit'),  'htmTxtActive' => Lang::get('forms.active')];
         $response = response($data);
         return $response;
     }

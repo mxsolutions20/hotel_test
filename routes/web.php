@@ -10,7 +10,7 @@ Route::get('login',             ['as' => 'login',           'uses' => 'LoginCont
 Route::post('auth/admin',       ['as' => 'auth/admin',      'uses' => 'LoginController@postLogin']);
 
 
-Route::group(['middleware' => 'auth'], function() {
+Route::group(['middleware' => 'auth'], function () {
 
     Route::group(['prefix' => 'admin'], function () {
         Route::get('logout', ['as' => 'logout', 'uses' => 'LoginController@getLogout']);
@@ -22,21 +22,22 @@ Route::group(['middleware' => 'auth'], function() {
         */
         Route::get('/',         ['as' => 'index', 'uses' => 'HomeController@index']);
         Route::get('users',     ['as' => 'users', 'uses' => 'UsersController@index']);
-        
+
         //hotels
         Route::get('hotels',    ['as' => 'hotels', 'uses' => 'HotelController@index']);
-
         Route::post('hotels/hotel-save', ['as' => 'hotels', 'uses' => 'HotelController@store']);
         Route::delete('hotels/{id}', ['as' => 'hotels', 'uses' => 'HotelController@destroy']);
+        Route::get('hotels/{id}/edit', ['as' => 'hotels', 'uses' => 'HotelController@edit']);
+        Route::post('hotels/hotel-update', ['as' => 'hotels', 'uses' => 'HotelController@hotelUpdate']);
     });
 });
 
 
 // Route to reload and change language
-Route::get('lang/{lang}' , function ($lang) {
-            session(['lang' => $lang]);
-            return \Redirect::back();
-        })
-        ->where([
-            'lang' => 'en|es'
-        ]);
+Route::get('lang/{lang}', function ($lang) {
+    session(['lang' => $lang]);
+    return \Redirect::back();
+})
+    ->where([
+        'lang' => 'en|es'
+    ]);

@@ -72,6 +72,7 @@
                                         </td>
                                         <td>
                                             <button type="button" class="btn btn-link btn_delete" id="btn_delete" data_id="{{$data->idHotel}}">{{ trans('forms.delete') }}</button>
+                                            <button type="button" class="btn btn-link btn_edit" id="btn_edit" data_id="{{$data->idHotel}}">{{ trans('forms.edit') }}</button>
                                         </td>
                                     </tr>
                                     @endforeach
@@ -87,39 +88,10 @@
     </div>
 </div>
 
-<!-- Modal -->
-<div class="modal fade" id="modal_add_item" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">{{trans('forms.new')}}</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div id="notifications" style="display:none"></div>
-            <form id="frmHotels">
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label for="name" class="col-form-label">{{ trans('forms.nombre') }}</label>
-                        <input type="text" id="name" class="form-control" name="name" autocomplete="off" requiered />
-                    </div>
-                    <div class="form-group">
-                        <label for="street" class="col-form-label">{{ trans('forms.street') }}</label>
-                        <input type="text" id="street" class="form-control" name="street" autocomplete="off" requiered />
-                    </div>
-                    <div class="form-group">
-                        <label for="phone" class="col-form-label">{{ trans('forms.phone') }}</label>
-                        <input type="text" id="phone" class="form-control" name="phone" autocomplete="off" requiered />
-                    </div>
-                </div>
-            </form>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">{{trans('forms.close')}}</button>
-                <button type="button" class="btn btn-primary" id="btn_save">{{trans('forms.save')}}</button>
-            </div>
-        </div>
-    </div>
-</div>
+<!-- Modal add-->
+@include('hotels.parts.form_add')
+
+<!-- Modal edit-->
+@include('hotels.parts.form_edit')
 
 @endsection
