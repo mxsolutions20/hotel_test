@@ -15,4 +15,11 @@ $ruta = Route::currentRouteName();
         </a>
     </li>
     @endpermission
+    
+    <li class="@if($ruta == 'hotels') current @endif">
+        <a href="{{ URL::to('admin/hotels') }}">
+            <i class="glyphicon glyphicon-list"></i> {{ trans('menu.hoteles') }}
+        </a>
+    </li>
+    
 </ul>

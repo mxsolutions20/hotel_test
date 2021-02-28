@@ -32,10 +32,19 @@ return [
     'delete'                => 'Eliminar',
     'cancel'                => 'Cancelar',
 
+    'actions'                => 'Acciones',
+
     'breakfast'             => 'Desayuno',
     'lunch'                 => 'Comida',
     'dinner'                => 'Cena',
     'allday'                => 'Todo el día',
+    'hotels'                => 'Hoteles',
+    'hotel_new'                => 'Nuevo Hotel',
+    'street'                => 'Direccón',
 
-    
+    'new'                   => 'Nuevo',
+    'phone'                   => 'Teléfono',
+    'active'                   => 'Activo'
+
+
 ];

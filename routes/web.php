@@ -22,6 +22,12 @@ Route::group(['middleware' => 'auth'], function() {
         */
         Route::get('/',         ['as' => 'index', 'uses' => 'HomeController@index']);
         Route::get('users',     ['as' => 'users', 'uses' => 'UsersController@index']);
+        
+        //hotels
+        Route::get('hotels',    ['as' => 'hotels', 'uses' => 'HotelController@index']);
+
+        Route::post('hotels/hotel-save', ['as' => 'hotels', 'uses' => 'HotelController@store']);
+        Route::delete('hotels/{id}', ['as' => 'hotels', 'uses' => 'HotelController@destroy']);
     });
 });
 

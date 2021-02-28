@@ -32,9 +32,22 @@ return [
     'delete'                => 'Delete',
     'cancel'                => 'Cancel',
 
+    'actions'                => 'Actions',
 
     'breakfast'             => 'Breakfast',
     'lunch'                 => 'Lunch',
     'dinner'                => 'Dinner',
     'allday'                => 'All Day',
+
+    'hotels'                => 'Hotels',
+    'hotel_new'             => 'Hotel New',
+    'street'                => 'Street',
+
+    'new'                   => 'New',
+    'phone'                 => 'Phone',
+    'active'                 => 'Active'
+
+
+
+
 ];

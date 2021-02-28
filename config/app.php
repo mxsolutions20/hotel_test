@@ -269,7 +269,7 @@ return [
         'Helper' => App\Helpers\Helper::class,
 
         //auth
-        'Entrust'   => Zizaco\Entrust\EntrustFacade::class,
+        'Entrust'   => Zizaco\Entrust\EntrustFacade::class,App\Providers\RouteServiceProvider::class,
 
     ],
 

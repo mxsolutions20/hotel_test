@@ -7,10 +7,9 @@
     <link href="{{asset('public/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
     
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     @yield('css')
-
     <!-- styles -->
     <link href="{{asset('public/css/styles.css')}}" rel="stylesheet">
 
@@ -24,6 +23,7 @@
 <body>
 
 @include('include.header')
+
 
 @yield('content')
 
@@ -39,6 +39,7 @@
     var _root_ = "{{ URL::to('admin') }}/";
     var _wait_ = "{{asset('public/images/wait.gif')}}";
 </script>
+<script src="{{asset('public/js/hotels.js')}}"></script>
 @yield('scripts')
 </body>
 </html>
